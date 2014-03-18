@@ -10,6 +10,16 @@ From the root directory, start the server with
 
 Load the test.html and go from there
 
-Chrome Mac 33
+Results
+=======
+
+Chrome OSX 33
 --------------
-setInterval generated + setTimeout = slow
+
+| Generated     | Yield       | Hide Method     | Result |
+| ------------- |-------------| ----------------|--------|
+| *             | *           | minimise window |OK      |
+| setInterval   | setTimeout  | background tab  |Paused  |
+| setInterval   | postmessage | background tab  |Paused  |
+| websocket     | setTimeout  | background tab  | slower 3 -> 4 seconds |
+| websocket     | postmessage | background tab  | OK |

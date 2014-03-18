@@ -55,7 +55,7 @@
         }
 
         function doYield(){
-            yieldMethod.call(msgReceived);
+            yieldMethod.call();
         }
 
         function timeout(){
@@ -66,14 +66,14 @@
             setTimeout(timeout, 0);
         }
 
-        function postMessage(){
+        function postMessageCaller(){
             window.postMessageYield(msgReceived); 
         }
 
         var methods = {
-            postMessage: postMessage,
-            setTimeout: timeout,
-            setTimeoutTwice: setTimeoutTwice
+            "postMessage": postMessageCaller,
+            "setTimeout": timeout,
+            "setTimeoutTwice": setTimeoutTwice
         };
 
         function msgReceived(){

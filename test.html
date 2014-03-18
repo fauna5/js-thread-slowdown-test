@@ -34,10 +34,13 @@
             yieldMethod = methods[yieldSelection]
 
             if(gen == "Websocket"){
-                var ws = new WebSocket("ws://localhost:8001");
+                var url = "ws://localhost:8001"
+                var ws = new WebSocket(url);
+                var opened = false;
                 ws.onopen = function()
                 {
                     startTime = Date.now();
+                    opened = true;
                     console.log("Connected...");
                 };
                 ws.onmessage = function (evt) 
@@ -46,7 +49,12 @@
                 };
                 ws.onclose = function()
                 { 
-                    console.log("Connection is closed..."); 
+                    if(opened){
+                        console.log("Connection is closed...");     
+                    } else {
+                        console.log("Couldn't make a connection to " + url + " :("); 
+                    }
+                    
                 };
             } else {
                 startTime = Date.now();

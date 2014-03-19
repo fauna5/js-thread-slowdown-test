@@ -19,7 +19,14 @@ Chrome OSX 33
 | Generated     | Yield       | Hide Method     | Result |
 | ------------- |-------------| ----------------|--------|
 | *             | *           | minimise window |OK      |
-| setInterval   | setTimeout  | background tab  |Paused  |
-| setInterval   | postmessage | background tab  |Paused  |
+| setInterval   | *           | background tab  |Paused  |
 | websocket     | setTimeout  | background tab  | slower 3 -> 4 seconds |
 | websocket     | postmessage | background tab  | OK |
+
+FF OSX 27
+---------
+
+| Generated     | Yield       | Hide Method     | Result |
+| ------------- |-------------| ----------------|--------|
+| setInterval   | *           | *               |Paused  |
+| websocket     | *           | *               |OK |

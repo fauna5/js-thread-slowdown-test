@@ -20,8 +20,8 @@ Chrome OSX 33
 | ------------- |-------------| ----------------|--------|
 | *             | *           | minimise window |OK      |
 | setInterval   | *           | background tab  |Paused  |
-| websocket     | setTimeout  | background tab  | slower 3 -> 4 seconds |
-| websocket     | postmessage | background tab  | OK |
+| websocket     | setTimeout  | background tab  |Slower. From 3s to 4s - CPU 10-12%|
+| websocket     | postmessage | background tab  |OK - CPU 9% |
 
 FF OSX 27
 ---------

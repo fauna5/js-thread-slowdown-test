@@ -6,6 +6,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "node-websocket": "*"
+    "nodejs-websocket": "*"
   }
 }

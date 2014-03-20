@@ -30,6 +30,7 @@
         function go(){
             var gen = document.getElementById("gen").value;
             var yieldSelection = document.getElementById("yield").value;
+            window.document.title = "test[" + gen + "," + yieldSelection + "]";
 
             yieldMethod = methods[yieldSelection]
 

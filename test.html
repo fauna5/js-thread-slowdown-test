@@ -32,10 +32,10 @@
             var yieldSelection = document.getElementById("yield").value;
             window.document.title = "test[" + gen + "," + yieldSelection + "]";
 
-            yieldMethod = methods[yieldSelection]
+            yieldMethod = methods[yieldSelection];
 
             if(gen == "Websocket"){
-                var url = "ws://localhost:8001"
+                var url = "ws://localhost:8001";
                 var ws = new WebSocket(url);
                 var opened = false;
                 ws.onopen = function()
@@ -44,18 +44,18 @@
                     opened = true;
                     console.log("Connected...");
                 };
-                ws.onmessage = function (evt) 
-                { 
+                ws.onmessage = function (evt)
+                {
                     doYield();
                 };
                 ws.onclose = function()
-                { 
+                {
                     if(opened){
-                        console.log("Connection is closed...");     
+                        console.log("Connection is closed...");
                     } else {
-                        console.log("Couldn't make a connection to " + url + " :("); 
+                        console.log("Couldn't make a connection to " + url + " :(");
                     }
-                    
+
                 };
             } else {
                 startTime = Date.now();
@@ -76,26 +76,31 @@
         }
 
         function postMessageCaller(){
-            window.postMessageYield(msgReceived); 
+            window.postMessageYield(msgReceived);
+        }
+
+        function _requestAnimationFrame(){
+            window.requestAnimationFrame(msgReceived);
         }
 
         var methods = {
             "postMessage": postMessageCaller,
             "setTimeout": timeout,
-            "setTimeoutTwice": setTimeoutTwice
+            "setTimeoutTwice": setTimeoutTwice,
+            "requestAnimationFrame": _requestAnimationFrame
         };
 
         function msgReceived(){
             count++;
             if (count % 1000 == 0){
                 var time = (Date.now() - startTime) / 1000;
-                console.log("1000 msgs in " + time + " secs");    
+                console.log("1000 msgs in " + time + " secs");
                 count = 0;
                 startTime = Date.now();
             }
         }
 
-        
+
     </script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <html>
 <head>
 <script type="text/javascript" src="postMessageYield.js"></script>
+<script type="text/javascript" src="webWorkerYield.js"></script>
 <script type="text/javascript" src="vizLogger.js"></script>
 </head>
 <body>
@@ -18,6 +19,7 @@
         <option>setTimeoutTwice</option>
         <option>postMessage</option>
         <option>requestAnimationFrame</option>
+        <option>webWorker</option>
     </select>
 
     <button onclick="go()">Go</button>
@@ -79,6 +81,10 @@
             window.postMessageYield(msgReceived);
         }
 
+        function webWorkerCaller(){
+            window.webworkerYield(msgReceived);
+        }
+
         function _requestAnimationFrame(){
             window.requestAnimationFrame(msgReceived);
         }
@@ -87,7 +93,8 @@
             "postMessage": postMessageCaller,
             "setTimeout": timeout,
             "setTimeoutTwice": setTimeoutTwice,
-            "requestAnimationFrame": _requestAnimationFrame
+            "requestAnimationFrame": _requestAnimationFrame,
+            "webWorker": webWorkerCaller
         };
 
         function msgReceived(){

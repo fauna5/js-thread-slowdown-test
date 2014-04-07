@@ -1,9 +1,9 @@
 <html>
 <head>
-<script type="text/javascript" src="postMessageYield.js"></script>
-<script type="text/javascript" src="webWorkerYield.js"></script>
-<script type="text/javascript" src="vizLogger.js"></script>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="js/postMessageYield.js"></script>
+<script type="text/javascript" src="js/webWorkerYield.js"></script>
+<script type="text/javascript" src="js/logWindowVisibilityChanges.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
     <h1>JS Thread slowdown test page</h1>
@@ -17,7 +17,6 @@
     <label>Yield Method</label>
     <select id="yield">
         <option>setTimeout</option>
-        <option>setTimeoutTwice</option>
         <option>postMessage</option>
         <option>requestAnimationFrame</option>
         <option>webWorker</option>

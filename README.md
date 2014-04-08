@@ -4,6 +4,8 @@ thread-slowdown-test
 Get up and running
 ------------------
 
+Requires node >= 0.10
+
 From the root directory, start the server with
 
     npm start

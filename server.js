@@ -1,6 +1,8 @@
 var ws = require("nodejs-websocket")
 
-// Scream server example: "hi" -> "HI!!!"
+console.log("Starting ws server on port 8001");
+console.log("Now load up test.html from the filesystem");
+
 var server = ws.createServer(function (conn) {
     console.log("New connection");
     var interval = setInterval(function(){
